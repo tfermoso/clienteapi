@@ -16,10 +16,14 @@ window.onload=function(){
             url:"http://localhost/mvc/api/new",
             data:datos,
             success:(dat)=>{
-                console.log(dat);
+                dat=JSON.parse(dat);
+                $("#respuesta").text(dat.msg);
+                $("#idUsuarioOrigen").val("");
+                $("#idUsuarioDestino").val("");
+                $("#mensaje").val("");
             },
             error:(err)=>{
-                console.log(err);
+                $("#respuesta").text(err);
             }            
         });
 
