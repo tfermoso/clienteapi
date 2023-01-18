@@ -28,4 +28,14 @@ window.onload=function(){
         });
 
     })
+
+    $.ajax({
+        url:"http://localhost/mvc/api",
+        success:(datos)=>{
+            console.log(datos);
+        },
+        error:(err)=>{
+            console.log(err);
+        }
+    })
 }
