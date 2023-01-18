@@ -1,5 +1,24 @@
 
 window.onload=function(){
+    $("#btnLogin").click(()=>{
+        let nombre=$("#nombre").val();
+        let pass=$("#password").val();
+        let datos={
+            "nombre":$nombre,
+            "password":$password
+        }
+        $.ajax({
+            type:"POST",
+            url:"http://localhost/mvc/api/login",
+            data:datos,
+            success:(dat)=>{
+                console.log(dat);
+            },
+            error:(err)=>{
+                console.log(err);
+            }
+        })
+    })
     console.log("cargando");
     $("#btnEnviar").click(()=>{
         console.log("enviando");
