@@ -28,28 +28,32 @@ window.onload=function(){
         });
 
     })
-    $("#cargando").removeClass("d.none");
-    $.ajax({
-        url:"http://192.168.100.27/mvc/api",
-        success:(datos)=>{
-            let mensajes=JSON.parse(datos);
-            let fila="";
-            for (let index = 0; index < mensajes.length; index++) {
-                const mensaje = mensajes[index];
-                let msg=`<tr>
-                <th scope="row">${mensaje.id}</th>
-                <td>${mensaje.id_usuario_origen}</td>
-                <td>${mensaje.id_usuario_destino}</td>
-                <td>${mensaje.mensaje}</td>
-                <td>${mensaje.fecha_envio}</td>
-              </tr>`;
-              fila+=msg;
+    $("#cargando").removeClass("d-none");
+    setTimeout(()=>{
+        console.log("Enviando peticion");
+        $.ajax({
+            url:"http://192.168.100.27/mvc/api",
+            success:(datos)=>{
+                let mensajes=JSON.parse(datos);
+                let fila="";
+                for (let index = 0; index < mensajes.length; index++) {
+                    const mensaje = mensajes[index];
+                    let msg=`<tr>
+                    <th scope="row">${mensaje.id}</th>
+                    <td>${mensaje.id_usuario_origen}</td>
+                    <td>${mensaje.id_usuario_destino}</td>
+                    <td>${mensaje.mensaje}</td>
+                    <td>${mensaje.fecha_envio}</td>
+                  </tr>`;
+                  fila+=msg;
+                }
+                $("#cargando").addClass("d-none");
+                $("#tbody").html(fila);
+            },
+            error:(err)=>{
+                console.log(err);
             }
-            $("#cargando").addClass("d.none");
-            $("#tbody").html(fila);
-        },
-        error:(err)=>{
-            console.log(err);
-        }
-    })
+        })
+    },3000)
+    
 }
