@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <style>
+        #cargando {
+            position: absolute;
+            top: 200px;
+            opacity: 0.5;
+            left: 25%;
+        }
+    </style>
 </head>
 
 <body>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -29,42 +38,42 @@
                 <button class="btn btn-success" id="btnEnviar">Enviar mensaje</button>
                 <div id="respuesta"></div>
             </div>
-            <div class="col-md-6">
-                <div id="cargando" class="d-none"><img src="./img/cargando.gif" alt=""></div>
+            <div class="col-md-6" style="position:relative">
+                <div id="cargando" class=""><img src="./img/cargando.gif" alt=""></div>
                 <h2>Mensajes</h2>
                 <table class="table">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Origen</th>
-                        <th scope="col">Destino</th>
-                        <th scope="col">Mensaje</th>
-                        <th scope="col">Fecha</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Origen</th>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Mensaje</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
                     </thead>
                     <tbody id="tbody">
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Fecha</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Fecha</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>Fecha</td>
-                      </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Fecha</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>Fecha</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>Fecha</td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
 
