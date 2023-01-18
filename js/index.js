@@ -44,11 +44,17 @@ window.onload=function(){
                     <td>${mensaje.id_usuario_destino}</td>
                     <td>${mensaje.mensaje}</td>
                     <td>${mensaje.fecha_envio}</td>
+                    <td><i id="msg${mensaje.id}" class="fa-solid fa-trash eliminarMensaje"></i></td>
                   </tr>`;
                   fila+=msg;
                 }
                 $("#cargando").addClass("d-none");
                 $("#tbody").html(fila);
+                $(".eliminarMensaje").click((t)=>{
+                    let idMensaje=t.currentTarget.id.substring(3);
+                    
+                })
+
             },
             error:(err)=>{
                 console.log(err);
