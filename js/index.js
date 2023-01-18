@@ -21,6 +21,7 @@ window.onload=function(){
                 $("#idUsuarioOrigen").val("");
                 $("#idUsuarioDestino").val("");
                 $("#mensaje").val("");
+                actualizarMensajes();
             },
             error:(err)=>{
                 $("#respuesta").text(err);
