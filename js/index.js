@@ -28,7 +28,7 @@ window.onload=function(){
         });
 
     })
-
+    $("#cargando").removeClass("d.none");
     $.ajax({
         url:"http://192.168.100.27/mvc/api",
         success:(datos)=>{
@@ -45,6 +45,7 @@ window.onload=function(){
               </tr>`;
               fila+=msg;
             }
+            $("#cargando").addClass("d.none");
             $("#tbody").html(fila);
         },
         error:(err)=>{
